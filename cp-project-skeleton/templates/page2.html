@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p class="lead">ขณะนี้มี {{ count }} รายการ · รอยืนยัน {{ waiting_count }} รายการ</p>
+
+<form method="post" class="panel">
+  <div class="field">
+    <label for="name">ชื่อผู้จอง</label>
+    <input id="name" name="name" type="text" required>
+  </div>
+
+  <div class="field">
+    <label for="phone">เบอร์โทรศัพท์</label>
+    <input id="phone" name="phone" type="tel" required>
+  </div>
+
+  <div class="field">
+    <label for="zone">โซนโต๊ะ</label>
+    <select id="zone" name="zone" required>
+      <option value="">-- เลือกโซนโต๊ะ --</option>
+      {% for zone in zones %}
+      <option value="{{ zone.value }}"{% if selected_zone == zone.value %} selected{% endif %}>{{ zone.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="date">วันที่จอง</label>
+    <input id="date" name="date" type="date" required>
+  </div>
+
+  <div class="field">
+    <label for="time">เวลาจอง</label>
+    <input id="time" name="time" type="time" required>
+  </div>
+
+  <div class="field">
+    <label for="guests">จำนวนคน (1–20 คน)</label>
+    <input id="guests" name="guests" type="number" min="1" max="20" value="2" required>
+  </div>
+
+  <button class="btn" type="submit">ส่งคำขอจอง</button>
+</form>
+{% endblock %}

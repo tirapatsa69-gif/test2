@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+{% if booking %}
+<p class="lead">รายการที่ {{ index + 1 }} จาก {{ count }}</p>
+
+<div class="stat-grid">
+  <div class="stat"><div class="label">ชื่อผู้จอง</div><div class="value">{{ booking.name }}</div></div>
+  <div class="stat"><div class="label">เบอร์โทรศัพท์</div><div class="value">{{ booking.phone }}</div></div>
+  <div class="stat"><div class="label">วันที่</div><div class="value">{{ booking.date }}</div></div>
+  <div class="stat"><div class="label">เวลา</div><div class="value">{{ booking.time }}</div></div>
+  <div class="stat"><div class="label">จำนวนคน</div><div class="value">{{ booking.guests }}</div></div>
+  <div class="stat"><div class="label">โซนโต๊ะ</div><div class="value">{{ booking.zone or "ไม่ระบุ" }}</div></div>
+  <div class="stat"><div class="label">สถานะ</div><div class="value">{{ booking.status }}</div></div>
+</div>
+
+<p class="panel">{{ sentence }}</p>
+<p>
+  {% if prev is not none %}
+  <a class="btn ghost" href="/page3?i={{ prev }}">← รายการก่อนหน้า</a>
+  {% endif %}
+  {% if next is not none %}
+  <a class="btn ghost" href="/page3?i={{ next }}">รายการถัดไป →</a>
+  {% endif %}
+</p>
+{% else %}
+<div class="empty">ยังไม่มีรายการจอง</div>
+{% endif %}
+{% endblock %}

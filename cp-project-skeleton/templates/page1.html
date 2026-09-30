@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p class="lead">เลือกโซนที่ชอบ แล้วกดไอคอนโต๊ะเพื่อไปจอง</p>
+
+<div class="card-grid">
+  {% for spot in spots %}
+  <article class="item-card">
+    <div class="body">
+      <span class="badge">{{ spot.recommendation }}</span>
+      <h2>{{ spot.name }}</h2>
+      <p>{{ spot.description }}</p>
+      <a class="table-icon"
+         href="{{ spot.booking_url }}"
+         aria-label="จองโต๊ะ {{ spot.name }}"
+         title="จองโต๊ะ {{ spot.name }}">🪑</a>
+      <a class="btn full" href="{{ spot.booking_url }}">จองโซนนี้</a>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{
+  "group": {
+    "name": "Group 11",
+    "section": "sec 06",
+    "topic": "เว็บแนะนำโซนและจองโต๊ะร้านอาหาร",
+    "description": "แนะนำโซนโต๊ะ ให้ลูกค้าส่งคำขอจอง และดูรายละเอียดการจอง"
+  },
+  "members": [
+    {"name": "นายไตรวิชญ์ เดชประภัสสร", "id": "69130840306", "role": "Project Lead (PM)", "task": "page1"},
+    {"name": "นายธีรภัทร์ เสาร์หงษ์", "id": "69130840063", "role": "Frontend Dev, Data Engineer", "task": "page2"},
+    {"name": "นายภดินทร์ นามบุรี", "id": "69130840144", "role": "QA / Test", "task": "page3"},
+    {"name": "นายธนวิชญ์ จินดาพล", "id": "69130840317", "role": "Backend Dev, DevOps", "task": "Home + team page"}
+  ]
+}
